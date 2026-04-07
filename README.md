@@ -1,3 +1,9 @@
+src/components/Pagination.tsx là thiết lập các nút phân trang, không dùng thì xóa.
+
+src/app/users/page.tsx là thiết lập màn hình list nếu thích dùng phân trang thì xóa phần còn lại (có comment đánh dấu á)
+
+src/services/userService.ts là gọi đến api nhé, tương tự là dùng cái nào thì xóa cái còn lại là được.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
