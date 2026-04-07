@@ -38,13 +38,13 @@ const BASE_URL = 'http://localhost:8080/api'; //url mac dinh cua API
  * author: [ntlong]
  * @returns res.json()
  */
-export async function getAllUsers(): Promise<User[]> {
-    const res = await fetch(`${BASE_URL}/users`, {
-        cache: 'no-store', //luon fetch du lieu moi tu api
-    });
-    if (!res.ok) throw new Error('Fetch User that bai');
-    return res.json();
-}
+// export async function getAllUsers(): Promise<User[]> {
+//     const res = await fetch(`${BASE_URL}/users`, {
+//         cache: 'no-store', //luon fetch du lieu moi tu api
+//     });
+//     if (!res.ok) throw new Error('Fetch User that bai');
+//     return res.json();
+// }
 
 /**
  * lay thong tin cua User da chon.
@@ -65,14 +65,14 @@ export async function getUserById(id: number): Promise<User> {
  * @param page trang muon lay danh sach.
  * @returns res.json()
  */
-// export async function getAllUsers(page: number = 0):Promise<PageResponse> {
-//     const res = await fetch(
-//         `${BASE_URL}/users?page=${page}&size=15`,
-//         { cache: 'no-store'}
-//     );
-//     if (!res.ok) throw new Error('Failed to fetch users');
-//     return res.json();
-// }
+export async function getAllUsers(page: number = 0):Promise<PageResponse> {
+    const res = await fetch(
+        `${BASE_URL}/users?page=${page}&size=15`,
+        { cache: 'no-store'}
+    );
+    if (!res.ok) throw new Error('Failed to fetch users');
+    return res.json();
+}
 
 /**
  * goi phuong thuc xoa user bang api.

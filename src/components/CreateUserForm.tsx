@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createUser } from "@/services/userService";
+import { validateUserForm } from "@/utils/userValidation";
 
 interface FormData {
     name:       string;
@@ -115,7 +116,7 @@ export default function CreateUserForm() {
 
     const handleSubmit = async () => {
         // Validate truoc khi gui
-        const newErrors = validate(form);
+        const newErrors = validateUserForm(form);
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
